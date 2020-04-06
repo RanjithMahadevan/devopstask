@@ -102,8 +102,8 @@ root module/
 prerequisite:
  code is developed using terraform version 12, ensure that you're using right version.
  Refer the below link to install terraform 12 on your machine.
- installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html
- Variables should be popullated in variables.tf file in the root path, please refer example/README.md for variables information.
+ installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html 
+ Variables should be popullated in variables.tf file in the root path,please refer example/README.md for variables information.
 
  Module execution steps:
             Ensure that you have installed terraform version 12 on your machine
@@ -128,5 +128,19 @@ Description about the Module:
                     * KMS key permission is restricted to rrot account & EC2 role attached to the instance.
                     * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.
 
-
+Reference Links:
+       terraform:
+       https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
+       https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html
+       https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html
+       https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html
+       https://www.terraform.io/docs/providers/aws/r/iam_role.html
+       https://www.terraform.io/docs/providers/aws/r/instance.html
+       https://www.terraform.io/docs/providers/aws/r/kms_key.html
+       https://www.terraform.io/docs/providers/aws/r/kms_grant.htm
+       S3FS:
+       https://github.com/dask/s3fs
+       
+ Please write me @ creativeranjith@gmail.com for any additional information.
+       
         

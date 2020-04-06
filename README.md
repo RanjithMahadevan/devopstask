@@ -7,7 +7,11 @@ This Reposiory contains terraform modules and resources code to provision follow
 5. S3 bucket with kms key server side encryption enabled with bucket policy with Get, put, list, update and delete access to ec2 role only(step3)
 6. Configuration changes will be managed using shell script userdata, which will install docker, s3fs packages and mount s3 bucket to ec2 instance on /opt/s3 dir.
 
- Note:Data between s3 bucket to Ec2 instace is encrypted at transit & rest with KMS key CMK which ensure that the storage is securely mounted with Ec2 instance, Also s3 bucket policy is restricted only to the ec2 instance provisioned by the module and the Ec2 instance permission has been defined by IAM policy which has been attached to ec2 role with s3 permission(put, get) and kms key permission to encrypt & decrypt.   
+ Note:Data between s3 bucket to Ec2 instace is encrypted at transit & rest with KMS key CMK which ensure that the storage is securely mounted with Ec2 instance, Also s3 bucket policy is restricted only to the ec2 instance provisioned by the module and the Ec2 instance permission has been defined by IAM policy which has been attached to ec2 role with s3 permission(put, get) and kms key permission to encrypt & decrypt. 
+ 
+ Architecture diagram:
+ 
+![Image of Architecture](https://github.com/RanjithMahadevan/devopstask/blob/develop/architecture%20diagram.PNG)
 
 Terraform code module structure:
 ```

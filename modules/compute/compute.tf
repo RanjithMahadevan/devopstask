@@ -1,5 +1,3 @@
-## Compute Resource ##
-
 ## User Data execution ##
 
 data "template_file" "user_data" {
@@ -12,6 +10,7 @@ data "template_file" "user_data" {
   }
 }
 
+## Compute Resource ##
 
 resource "aws_instance" "dock" {
   ami                     = var.ami_id

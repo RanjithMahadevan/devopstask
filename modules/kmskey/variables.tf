@@ -5,6 +5,5 @@ variable "description"                 {default = ""}
 variable "deletion_window_in_days"     {default = ""}
 variable "enable_key_rotation"         {default = ""}
 variable "policy"                      {default = ""}
-#variable "depends"                     {default = "[]"}
 variable "ec2_role_arn"                {default = ""}
 variable "root_aws_account_id"         {default = ""}

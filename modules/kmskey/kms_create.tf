@@ -12,7 +12,6 @@ resource "aws_kms_key" "key" {
   deletion_window_in_days = var.deletion_window_in_days
   enable_key_rotation     = var.enable_key_rotation
   policy                  = data.template_file.policy.rendered
-  #depends_on              = [var.depends]
   tags = {
   "Name"                  = var.kms_name
 }

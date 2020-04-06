@@ -10,16 +10,3 @@ resource "aws_iam_role" "dock_role" {
     Name = "var.ec2_role_name"
   }
 }
-
-#resource "aws_iam_instance_profile" "dock_ec2_profile" {
-#  name = "dock_profile"
-#  role = aws_iam_role.dock_role.name
-#}
-
-#resource "aws_iam_role_policy" "iam_ec2_role_policy" {
-#  name       = "s3dock_policy"
-#  role       = aws_iam_role.dock_role.id
-#  policy     = data.template_file.iam_ec2_role_policy.rendered
-#  depends_on = [aws_s3_bucket.dock]
-#}
-

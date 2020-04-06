@@ -5,7 +5,6 @@ module "kms_key" {
   deletion_window_in_days = 7
   enable_key_rotation     = false
   policy                  = module.templates.kms_policy
-  #depends                = [module.kms_key.key_id]
   ec2_role_arn            = module.iam_ec2_role.ec2_role_arn
   root_aws_account_id     = module.caller_id.aws_account_id
 }

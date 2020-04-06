@@ -25,6 +25,6 @@ variable "environment"           {default = ""}
 
 ## Userdata Variables ##
 
-variable "region"              {default = ""}
-variable "s3_bucket_name"      {default = ""}
-variable "iam_role_name"       {default = ""}
+variable "region"               {default = ""}
+variable "s3_bucket_name"       {default = ""}
+variable "iam_role_name"        {default = ""}

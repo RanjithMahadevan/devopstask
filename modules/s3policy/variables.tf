@@ -1,5 +1,4 @@
 ## S3 bucket Policy Variables ##
-
 variable "policy"                      {default = ""}
 variable "bucket_id"                   {default = ""}
 variable "depends"                     {default = [""]}

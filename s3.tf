@@ -22,7 +22,7 @@ module "s3_bucket_policy" {
   bucket_id               = module.s3_bucket.s3_bucket_id
   policy                  = module.templates.s3_bucket_policy
   ec2_role_arn            = module.iam_ec2_role.ec2_role_arn
-  s3_bkt_arn           = module.s3_bucket.s3_bucket_arn
+  s3_bkt_arn              = module.s3_bucket.s3_bucket_arn
   kms_key_arn             = module.kms_key.key_arn
   depends                 = [module.s3_access.s3_access_dep]
 }

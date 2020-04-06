@@ -12,8 +12,7 @@ module "sg" {
 ## ingress traffic allow to dock ip ##
 module "ingress_rule1" {
   source                  = "./modules/sgrules/cidr_range"
- ip_cidr_range           = ["${var.ingress_ip_cidr_range}"]
- # ip_cidr_range           = ["40.30.20.10/32"]
+ ip_cidr_range            = ["${var.ingress_ip_cidr_range}"]
   security_group_id       = module.sg.security_group_id
   type                    = var.direction1
   from_port               = "22"
@@ -37,7 +36,6 @@ module "ingress_rule2" {
 module "egress_rule1" {
   source                  = "./modules/sgrules/cidr_range"
   ip_cidr_range           = ["${var.egress_ip_cidr_range}"]
- # ip_cidr_range           = ["0.0.0.0/0"]
   security_group_id       = module.sg.security_group_id
   type                    = var.direction2
   from_port               = "0"

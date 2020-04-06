@@ -1,5 +1,4 @@
 ## Ec2 compute Output ##
-
 output "ec2_public_ip" {
   description = "The ec2 public ip "
   value       = aws_instance.dock.public_ip

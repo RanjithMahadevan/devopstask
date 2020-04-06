@@ -100,19 +100,19 @@ root module/
 ```
 
 prerequisite:
- code is developed using terraform version 12, ensure that you're using right version.
- Refer the below link to install terraform 12 on your machine.
- installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html 
- Variables should be popullated in variables.tf file in the root path,please refer example/README.md for variables information.
+ * code is developed using terraform version 12, ensure that you're using right version.
+ * Refer the below link to install terraform 12 on your machine.
+ * installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html 
+ * Variables should be popullated in variables.tf file in the root path,please refer example/README.md for variables information.
 
  Module execution steps:
             Ensure that you have installed terraform version 12 on your machine
             switch your cli or git bash to code root path and ececute the following command
-                    terraform -v    - (to ensure version)
-                    terraform init  - (to initialize modules & necessary terraform plugins)
-                    terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)
-                    terraform apply -auto-approve - to create a resourse defined in code
-                    terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist.
+                    * terraform -v    - (to ensure version)
+                    * terraform init  - (to initialize modules & necessary terraform plugins)
+                    * terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)
+                    * terraform apply -auto-approve - to create a resourse defined in code
+                    * terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist.
 
      note: "module.instance.aws_instance.doc" is specfic to ec2 instance resource defined in the module.
             To provision the Ec2 instance again, execute "terraform apply -auto-approve"       
@@ -129,18 +129,18 @@ Description about the Module:
                     * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.
 
 Reference Links:
-       terraform:
-       https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
-       https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html
-       https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html
-       https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html
-       https://www.terraform.io/docs/providers/aws/r/iam_role.html
-       https://www.terraform.io/docs/providers/aws/r/instance.html
-       https://www.terraform.io/docs/providers/aws/r/kms_key.html
-       https://www.terraform.io/docs/providers/aws/r/kms_grant.htm
-       S3FS:
-       https://github.com/dask/s3fs
+       * terraform:
+       1.  https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
+       2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html
+       3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html
+       4. https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html
+       5. https://www.terraform.io/docs/providers/aws/r/iam_role.html
+       6. https://www.terraform.io/docs/providers/aws/r/instance.html
+       7. https://www.terraform.io/docs/providers/aws/r/kms_key.html
+       8. https://www.terraform.io/docs/providers/aws/r/kms_grant.htm
+       * S3FS:
+       9. https://github.com/dask/s3fs
        
- Please write me @ creativeranjith@gmail.com for any additional information.
+ *Please write me @ creativeranjith@gmail.com for any additional information.
        
         

@@ -1,4 +1,4 @@
-Devops Task Project: 
+## Devops Task Project: ##
 This Reposiory contains terraform modules and resources code to provision following resources.
 1. RHEL Ec2 instance 
 2. Security Group and it's rules (ingress ssh traffic to dock ip only and egress traffic  to internet)
@@ -9,11 +9,11 @@ This Reposiory contains terraform modules and resources code to provision follow
 
  Note:Data between s3 bucket to Ec2 instace is encrypted at transit & rest with KMS key CMK which ensure that the storage is securely mounted with Ec2 instance, Also s3 bucket policy is restricted only to the ec2 instance provisioned by the module and the Ec2 instance permission has been defined by IAM policy which has been attached to ec2 role with s3 permission(put, get) and kms key permission to encrypt & decrypt. 
  
- Architecture diagram:
+ ## Architecture diagram: ##
  
 ![Image of Architecture](https://github.com/RanjithMahadevan/devopstask/blob/develop/architecture%20diagram.PNG)
 
-Terraform code module structure:
+## Terraform code module structure: ##
 ```
 root module/
 │   ├── provider.tf        - provider info
@@ -99,13 +99,13 @@ root module/
 |   |  |        ├── serer_script.sh.tpl - user data script (configuration mgmt on target iinstance)
 ```
 
-prerequisite:
+## prerequisite:  ##
  * code is developed using terraform version 12, ensure that you're using right version.  
  * Refer the below link to install terraform 12 on your machine.  
  * installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html   
  * Variables should be popullated in variables.tf file in the root path,please refer example/README.md for  variables information.  
 
- Module execution steps:  
+ ## Module execution steps: ## 
  * Ensure that you have installed terraform version 12 on your machine  
  * switch your cli or git bash to code root path and ececute the following command  
  * erraform -v    - (to ensure version)  
@@ -118,18 +118,18 @@ prerequisite:
             To provision the Ec2 instance again, execute "terraform apply -auto-approve"         
 
 
-Description about the Module:
+## Description about the Module: ##
         This module has created to provision single RHEL or centos Ec2 instance mounted with external storage S3 bucket with secure manner on your own VPC and subnet.Also this code can be reusable on any environment to provision mentioned aws resources.
 
-        Security features:
+       Security features:  
                     * Ec2 SSH ingress acess is allowed only to the specfic IP which yoy can mention the variable 
                     * Ec2 instance permission is restricted only to the s3 bucket created in the module
                     * S3 bucket is encrypted by KMS CMK key and decrypt permission only allowed to the EC2 instance 
                     * KMS key permission is restricted to rrot account & EC2 role attached to the instance.  
                     * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.  
 
-Reference Links:  
-        terraform:  
+## Reference Links: ## 
+       terraform:  
                     1. https://www.terraform.io/docs/providers/aws/r/s3_bucket.html  
                     2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html  
                     3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html  

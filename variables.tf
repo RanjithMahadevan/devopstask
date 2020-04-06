@@ -14,14 +14,12 @@ variable "ec2_iam_policy_name"         {default = ""}
 ## S3 Bucket Variables ##
 variable "bucket_name"                 {default = ""}
 
-
 ## Security Group Variables ##
 variable "availability_zone"           {default = ""}
 variable "security_group_name"         {default = ""}
 variable "vpc_id"                      {default = ""}
 variable "environment"                 {default = ""}
 variable "owner"                       {default = ""}
-
 
 ## security group default variables do not change ##
 variable "protocol1"                   {default = "tcp"}
@@ -34,9 +32,7 @@ variable "direction2"                  {default = "egress"}
 variable "ingress_ip_cidr_range"       {default = ""}
 variable "egress_ip_cidr_range"        {default = ""}
 
-
 ## Ec2 compute variables ##
-
 variable "ami_id"                      {default = ""}
 variable "key_name"                    {default = ""}
 variable "subnet_id"                   {default = ""}
@@ -46,7 +42,6 @@ variable "hostname"                    {default = ""}
 ## Root Volume variable ##
 variable "root_volume_type"            {default = "gp2"}
 variable "root_volume_size"            {default = "30"}
-
 
 ##Inatance tags variables ##
 variable "service_role"                {default = ""}

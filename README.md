@@ -107,12 +107,12 @@ prerequisite:
 
  Module execution steps:
             Ensure that you have installed terraform version 12 on your machine
-            switch your cli or git bash to code root path and ececute the following command
-                    * terraform -v    - (to ensure version)
-                    * terraform init  - (to initialize modules & necessary terraform plugins)
-                    * terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)
-                    * terraform apply -auto-approve - to create a resourse defined in code
-                    * terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist.
+            switch your cli or git bash to code root path and ececute the following command 
+                    * terraform -v    - (to ensure version) 
+                    * terraform init  - (to initialize modules & necessary terraform plugins) 
+                    * terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code) 
+                    * terraform apply -auto-approve - to create a resourse defined in code 
+                    * terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist. 
 
      note: "module.instance.aws_instance.doc" is specfic to ec2 instance resource defined in the module.
             To provision the Ec2 instance again, execute "terraform apply -auto-approve"       
@@ -128,20 +128,20 @@ Description about the Module:
                     * KMS key permission is restricted to rrot account & EC2 role attached to the instance.
                     * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.
 
-Reference Links:
-        terraform:
-                    1.  https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
-                    2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html
-                    3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html
-                    4. https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html
-                    5. https://www.terraform.io/docs/providers/aws/r/iam_role.html
-                    6. https://www.terraform.io/docs/providers/aws/r/instance.html
-                    7. https://www.terraform.io/docs/providers/aws/r/kms_key.html
-                    8. https://www.terraform.io/docs/providers/aws/r/kms_grant.htm
-       S3FS:
-                    9. https://github.com/dask/s3fs
+Reference Links: 
+        terraform: 
+                    1.  https://www.terraform.io/docs/providers/aws/r/s3_bucket.html 
+                    2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html 
+                    3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html 
+                    4. https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html 
+                    5. https://www.terraform.io/docs/providers/aws/r/iam_role.html 
+                    6. https://www.terraform.io/docs/providers/aws/r/instance.html 
+                    7. https://www.terraform.io/docs/providers/aws/r/kms_key.html 
+                    8. https://www.terraform.io/docs/providers/aws/r/kms_grant.htm 
+       S3FS: 
+                    9. https://github.com/dask/s3fs 
                     
        
- *Please write me @ creativeranjith@gmail.com for any additional information.
+ *Please write me @ creativeranjith@gmail.com for any additional information. 
        
         

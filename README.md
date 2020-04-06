@@ -108,7 +108,7 @@ root module/
  ## Module execution steps: ## 
  * Ensure that you have installed terraform version 12 on your machine  
  * switch your cli or git bash to code root path and ececute the following command  
- * erraform -v    - (to ensure version)  
+ * terraform -v    - (to ensure version)  
  * terraform init  - (to initialize modules & necessary terraform plugins)  
  * terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)   
  * terraform apply -auto-approve - to create a resourse defined in code  

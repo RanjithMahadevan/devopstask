@@ -65,8 +65,8 @@ variable "root_volume_type"            {default = "gp2"} - root volume disk type
 
 variable "root_volume_size"            {default = "30"}  - root volume size 
 
+## Inatance tags variables ##
 
-##Inatance tags variables ##
 variable "service_role"                {default = "any value "} - ec2 tag value, example - docker_instance
 
 variable "os"                          {default = "RHEL"} - ec2 tag value, example - RHEL , Centos

@@ -129,17 +129,18 @@ Description about the Module:
                     * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.
 
 Reference Links:
-       * terraform:
-       1.  https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
-       2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html
-       3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html
-       4. https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html
-       5. https://www.terraform.io/docs/providers/aws/r/iam_role.html
-       6. https://www.terraform.io/docs/providers/aws/r/instance.html
-       7. https://www.terraform.io/docs/providers/aws/r/kms_key.html
-       8. https://www.terraform.io/docs/providers/aws/r/kms_grant.htm
-       * S3FS:
-       9. https://github.com/dask/s3fs
+        terraform:
+                    1.  https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
+                    2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html
+                    3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html
+                    4. https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html
+                    5. https://www.terraform.io/docs/providers/aws/r/iam_role.html
+                    6. https://www.terraform.io/docs/providers/aws/r/instance.html
+                    7. https://www.terraform.io/docs/providers/aws/r/kms_key.html
+                    8. https://www.terraform.io/docs/providers/aws/r/kms_grant.htm
+       S3FS:
+                    9. https://github.com/dask/s3fs
+                    
        
  *Please write me @ creativeranjith@gmail.com for any additional information.
        

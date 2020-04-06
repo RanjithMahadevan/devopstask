@@ -105,16 +105,16 @@ prerequisite:
  * installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html   
  * Variables should be popullated in variables.tf file in the root path,please refer example/README.md for  variables information.  
 
- Module execution steps:
-            Ensure that you have installed terraform version 12 on your machine  
-            switch your cli or git bash to code root path and ececute the following command  
-                    * terraform -v    - (to ensure version)  
-                    * terraform init  - (to initialize modules & necessary terraform plugins)  
-                    * terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)   
-                    * terraform apply -auto-approve - to create a resourse defined in code  
-                    * terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist.   
+ Module execution steps:  
+ * Ensure that you have installed terraform version 12 on your machine  
+ * switch your cli or git bash to code root path and ececute the following command  
+ * erraform -v    - (to ensure version)  
+ * terraform init  - (to initialize modules & necessary terraform plugins)  
+ * terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)   
+ * terraform apply -auto-approve - to create a resourse defined in code  
+ * terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist.   
 
-     note: "module.instance.aws_instance.doc" is specfic to ec2 instance resource defined in the module.
+        note: "module.instance.aws_instance.doc" is specfic to ec2 instance resource defined in the module.
             To provision the Ec2 instance again, execute "terraform apply -auto-approve"         
 
 
@@ -125,12 +125,12 @@ Description about the Module:
                     * Ec2 SSH ingress acess is allowed only to the specfic IP which yoy can mention the variable 
                     * Ec2 instance permission is restricted only to the s3 bucket created in the module
                     * S3 bucket is encrypted by KMS CMK key and decrypt permission only allowed to the EC2 instance 
-                    * KMS key permission is restricted to rrot account & EC2 role attached to the instance.
-                    * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.
+                    * KMS key permission is restricted to rrot account & EC2 role attached to the instance.  
+                    * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.  
 
 Reference Links:  
         terraform:  
-                    1.  https://www.terraform.io/docs/providers/aws/r/s3_bucket.html  
+                    1. https://www.terraform.io/docs/providers/aws/r/s3_bucket.html  
                     2. https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html  
                     3. https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html  
                     4. https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html  

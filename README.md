@@ -126,7 +126,7 @@ root module/
                     * Ec2 SSH ingress access is allowed only to the specfic IP which you can mention the variable 
                     * Ec2 instance permission is restricted only to the s3 bucket created in the module
                     * S3 bucket is encrypted by KMS CMK key and decrypt permission only allowed to the EC2 instance 
-                    * KMS key permission is restricted to rrot account & EC2 role attached to the instance.  
+                    * KMS key permission is restricted to root account & EC2 role attached to the instance.  
                     * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.  
 
 ## Reference Links: ## 

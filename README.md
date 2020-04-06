@@ -5,6 +5,7 @@ This Reposiory contains terraform modules and resources code to provision follow
 3. IMA Ec2 role, instance profile & corresponding policy with specfic s3 bucket acess & KMS encrypt_decrypt permission to encrypt & decrypt datas from S3 bucket 
 4. KMS key creation with policy to allow permission only to the EC2 role to manage and access the key for encrypt & decrypt particular s3 bucket data only
 5. S3 bucket with kms key server side encryption enabled with bucket policy with Get, put, list, update and delete access to ec2 role only(step3) 
+ Note:Data between s3 bucket to Ec2 instace is encrypted at transit & rest with KMS key CMK which ensure that the storage is securely mounted with Ec2 instance, Also s3 bucket policy is restricted only to the ec2 instance provisioned by the module and the Ec2 instance permission has been defined by IAM policy which has been attached to ec2 role with s3 permission(put, get) and kms key permission to encrypt & decrypt.   
 
 Terraform code module structure:
 ```
@@ -20,7 +21,7 @@ root module/
 |   ├── security_group.tf  - security group & corresponding rules creation module
 |   ├── template.tf        - template files for AWS json policy & user data templates
 |   ├── output.tf          - Resourse output 
-├── module/ - (modules folder path)
+├── modules/ - (modules folder path)
 │   ├──calleridentity/
 │   │  ├── variables.tf
 │   │  ├── caller_id.tf
@@ -92,3 +93,34 @@ root module/
 |   |  |        ├── serer_script.sh.tpl - user data script (configuration mgmt on target iinstance)
 ```
 
+prerequisite:
+ code is developed using terraform version 12, ensure that you're using right version.
+ Refer the below link to install terraform 12 on your machine.
+ installation procedure:https://learn.hashicorp.com/terraform/getting-started/install.html
+ Variables should be popullated in variables.tf file in the root path, please refer example/README.md for variables information.
+
+ Module execution steps:
+            Ensure that you have installed terraform version 12 on your machine
+            switch your cli or git bash to code root path and ececute the following command
+                    terraform -v    - (to ensure version)
+                    terraform init  - (to initialize modules & necessary terraform plugins)
+                    terraform plan  - (to verify the list of resource that will be provision and ensure no errors in code)
+                    terraform apply -auto-approve - to create a resourse defined in code
+                    terraform destroy -target=module.instance.aws_instance.dock -auto-approve - To terminate Ec2 instance alone, so that other resources like s3 bucket, kms, IAM role etc.. will be exist.
+
+     note: "module.instance.aws_instance.doc" is specfic to ec2 instance resource defined in the module.
+            To provision the Ec2 instance again, execute "terraform apply -auto-approve"       
+
+
+Description about the Module:
+        This module has created to provision single RHEL or centos Ec2 instance mounted with external storage S3 bucket with secure manner on your own VPC and subnet.Also this code can be reusable on any environment to provision mentioned aws resources.
+
+        Security features:
+                    * Ec2 SSH ingress acess is allowed only to the specfic IP which yoy can mention the variable 
+                    * Ec2 instance permission is restricted only to the s3 bucket created in the module
+                    * S3 bucket is encrypted by KMS CMK key and decrypt permission only allowed to the EC2 instance 
+                    * KMS key permission is restricted to rrot account & EC2 role attached to the instance.
+                    * Data between s3 bucket to Ec2 instance is encrypted at rest and transit.
+
+
+        

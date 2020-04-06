@@ -123,7 +123,7 @@ root module/
         This module has created to provision single RHEL or centos Ec2 instance mounted with external storage S3 bucket with secure manner on your own VPC and subnet.Also this code can be reusable on any environment to provision mentioned aws resources.
 
        Security features:  
-                    * Ec2 SSH ingress acess is allowed only to the specfic IP which yoy can mention the variable 
+                    * Ec2 SSH ingress access is allowed only to the specfic IP which you can mention the variable 
                     * Ec2 instance permission is restricted only to the s3 bucket created in the module
                     * S3 bucket is encrypted by KMS CMK key and decrypt permission only allowed to the EC2 instance 
                     * KMS key permission is restricted to rrot account & EC2 role attached to the instance.  
